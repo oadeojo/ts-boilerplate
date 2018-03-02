@@ -1,4 +1,10 @@
+# TS-BOILERPLATE
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+It includes:
+- [antd](https://ant.design/)
+- [Mobx-state-tree](https://github.com/mobxjs/mobx-state-tree)
+- [react-intl](https://github.com/yahoo/react-intl)
+- [react-router](https://reacttraining.com/react-router/)
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
