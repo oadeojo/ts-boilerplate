@@ -19,6 +19,7 @@
   "scripts": {
     "start": "react-app-rewired start --scripts-version react-scripts-ts",
     "build": "react-app-rewired build --scripts-version react-scripts-ts",
+    "generate": "plop --plopfile internals/generators/index.js",
     "test":
       "react-app-rewired test --env=jsdom --scripts-version react-scripts-ts",
     "eject": "react-scripts-ts eject"
@@ -31,6 +32,7 @@
     "@types/react-dom": "^16.0.4",
     "@types/react-intl": "^2.3.5",
     "@types/react-router": "^4.0.22",
+    "plop": "^1.9.1",
     "react-app-rewire-less": "^2.1.0",
     "react-app-rewired": "^1.4.1",
     "ts-import-plugin": "^1.4.4",
