@@ -1,0 +1,37 @@
+/**
+ *
+ * {{properCase name }}
+ *
+ */
+
+import * as React from 'react';
+{{#if wantHeaders}}
+import { Helmet } from 'react-helmet';
+{{/if}}
+{{#if wantMessages}}
+import { FormattedMessage } from 'react-intl';
+{{/if}}
+{{#if wantMessages}}
+import messages from './messages';
+{{/if}}
+
+interface {{ properCase name }}Props {
+}
+
+const {{ properCase name }}: React.SFC<{{ properCase name }}Props> = (props) => {
+  return (
+    <div>
+    {{#if wantHeaders}}
+      <Helmet>
+        <title>{{properCase name}}</title>
+        <meta name="description" content="Description of {{properCase name}}" />
+      </Helmet>
+    {{/if}}
+    {{#if wantMessages}}
+      <FormattedMessage {...messages.header} />
+    {{/if}}
+    </div>
+  );
+};
+
+export default {{ properCase name }};

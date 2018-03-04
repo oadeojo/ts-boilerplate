@@ -1,10 +1,10 @@
 /**
-*
-* {{ properCase name }}
-*
-*/
+ *
+ * {{ properCase name }}
+ *
+ */
 
-import React from 'react';
+import * as React from 'react';
 // import styled from 'styled-components';
 
 {{#if wantMessages}}
@@ -12,7 +12,10 @@ import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 {{/if}}
 
-class {{ properCase name }} extends {{{ type }}} { // eslint-disable-line react/prefer-stateless-function
+export interface {{ properCase name }}Props {
+}
+
+class {{ properCase name }} extends {{{ type }}} <{{ properCase name }}Props, {}> {
   render() {
     return (
       <div>
@@ -23,9 +26,5 @@ class {{ properCase name }} extends {{{ type }}} { // eslint-disable-line react/
     );
   }
 }
-
-{{ properCase name }}.propTypes = {
-
-};
 
 export default {{ properCase name }};

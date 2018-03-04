@@ -1,10 +1,10 @@
 /**
-*
-* {{ properCase name }}
-*
-*/
+ *
+ * {{ properCase name }}
+ *
+ */
 
-import React from 'react';
+import * as React from 'react';
 // import styled from 'styled-components';
 
 {{#if wantMessages}}
@@ -12,7 +12,10 @@ import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 {{/if}}
 
-function {{ properCase name }}() {
+interface {{ properCase name }}Props {
+}
+
+const {{ properCase name }}: React.SFC<{{ properCase name }}Props> = (props) => {
   return (
     <div>
     {{#if wantMessages}}
@@ -20,10 +23,5 @@ function {{ properCase name }}() {
     {{/if}}
     </div>
   );
-}
-
-{{ properCase name }}.propTypes = {
-
 };
-
 export default {{ properCase name }};

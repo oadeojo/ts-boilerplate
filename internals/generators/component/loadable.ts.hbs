@@ -4,7 +4,7 @@
  *
  */
 
-import Loadable from 'react-loadable';
+import * as Loadable from 'react-loadable';
 
 export default Loadable({
   loader: () => import('./index'),

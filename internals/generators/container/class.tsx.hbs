@@ -1,0 +1,39 @@
+/**
+ *
+ * {{properCase name }}
+ *
+ */
+
+import * as React from 'react';
+{{#if wantHeaders}}
+import { Helmet } from 'react-helmet';
+{{/if}}
+{{#if wantMessages}}
+import { FormattedMessage } from 'react-intl';
+{{/if}}
+{{#if wantMessages}}
+import messages from './messages';
+{{/if}}
+
+export interface {{ properCase name }}Props {
+}
+
+export class {{ properCase name }} extends {{{ type }}} <{{ properCase name }}Props, {}> {
+  render() {
+    return (
+      <div>
+      {{#if wantHeaders}}
+        <Helmet>
+          <title>{{properCase name}}</title>
+          <meta name="description" content="Description of {{properCase name}}" />
+        </Helmet>
+      {{/if}}
+      {{#if wantMessages}}
+        <FormattedMessage {...messages.header} />
+      {{/if}}
+      </div>
+    );
+  }
+}
+
+export default {{ properCase name }};
