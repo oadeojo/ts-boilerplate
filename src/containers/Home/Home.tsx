@@ -1,13 +1,18 @@
 import * as React from 'react';
 import { Button } from 'antd';
-export interface HomeProps {}
+import { RouteComponentProps } from 'react-router';
+
+// tslint:disable-next-line:no-any
+export interface HomeProps extends RouteComponentProps<any> {}
 
 export default class Home extends React.Component<HomeProps, {}> {
   render() {
     return (
       <div>
         <div>Home</div>
-        <Button type="primary">Button</Button>
+        <Button type="primary" onClick={() => this.props.history.push('login')}>
+          Button
+        </Button>
       </div>
     );
   }

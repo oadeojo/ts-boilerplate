@@ -1,25 +1,40 @@
 import * as React from 'react';
-import createHistory from 'history/createBrowserHistory';
 import { Provider } from 'mobx-react';
-import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
+// @ts-ignore
+import { wiretap, inspect } from 'mobx-wiretap/mst';
+// @ts-ignore
+import Reactotron from 'reactotron-react-js';
+import { mst } from 'reactotron-mst';
+
+import routingStore, { history } from './router';
 import { Router, Switch, Route } from 'react-router';
 import { RootModel } from 'models/rootModel';
+
 import LanguageProvider from 'components/LanguageProvider/LanguageProvider';
 import Home from 'containers/Home/Home';
 import Login from 'containers/Login/Login';
 import { translationMessages } from 'i18n';
 import 'App.css';
 
-// const logo = require('./logo.svg');
-
-const browserHistory = createHistory();
-const routingStore = new RouterStore();
-const history = syncHistoryWithStore(browserHistory, routingStore);
-
 const rootStore = RootModel.create({
   router: routingStore,
   locale: 'en',
 });
+
+if (process.env.NODE_ENV === 'development') {
+  // Provide a name as the app name.
+  wiretap('ts-boilerplate', {
+    host: 'http://localhost',
+    port: 4000,
+  });
+  inspect('Store', rootStore);
+
+  // tell Reactotron to use this plugin
+  Reactotron.configure() // we can use plugins here -- more on this later
+    .use(mst())
+    .connect();
+  Reactotron.trackMstNode(rootStore);
+}
 
 class App extends React.Component {
   render() {
