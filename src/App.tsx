@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Provider } from 'mobx-react';
 // @ts-ignore
+import makeInspectable from 'mobx-devtools-mst';
+// @ts-ignore
 import { wiretap, inspect } from 'mobx-wiretap/mst';
 // @ts-ignore
 import Reactotron from 'reactotron-react-js';
@@ -22,6 +24,7 @@ const rootStore = RootModel.create({
 });
 
 if (process.env.NODE_ENV === 'development') {
+  makeInspectable(rootStore);
   // Provide a name as the app name.
   wiretap('ts-boilerplate', {
     host: 'http://localhost',

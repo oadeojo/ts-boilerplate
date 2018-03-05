@@ -4367,6 +4367,10 @@ mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkd
   dependencies:
     minimist "0.0.8"
 
+mobx-devtools-mst@^0.9.9:
+  version "0.9.9"
+  resolved "http://nexus.formsqa.com/content/groups/npm-all/mobx-devtools-mst/-/mobx-devtools-mst-0.9.9.tgz#28bdf4f86c29ef1b937f2949d8eebbf519ce77dd"
+
 mobx-react@^4.4.2:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-4.4.2.tgz#22d710974883de1763cdafce3025570a79c64336"
