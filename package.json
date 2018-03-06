@@ -16,11 +16,11 @@
     "react-scripts-ts": "2.13.0"
   },
   "scripts": {
-    "start": "react-app-rewired start --scripts-version react-scripts-ts",
-    "build": "react-app-rewired build --scripts-version react-scripts-ts",
-    "generate": "plop --plopfile internals/generators/index.js",
-    "test": "react-app-rewired test --env=jsdom --scripts-version react-scripts-ts",
-    "eject": "react-scripts-ts eject"
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject",
+    "generate": "plop --plopfile internals/generators/index.js"
   },
   "devDependencies": {
     "@types/history": "^4.6.2",
