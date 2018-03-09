@@ -1,19 +1,20 @@
 import * as React from 'react';
-import { Button } from 'antd';
 import { RouteComponentProps } from 'react-router';
+import { translate, InjectedTranslateProps } from 'react-i18next';
 
-// tslint:disable-next-line:no-any
-export interface HomeProps extends RouteComponentProps<any> {}
+export interface HomeProps  // tslint:disable-next-line:no-any
+  extends RouteComponentProps<any>,
+    InjectedTranslateProps {}
 
-export default class Home extends React.Component<HomeProps, {}> {
+class Home extends React.Component<HomeProps, {}> {
   render() {
     return (
       <div>
-        <div>Home</div>
-        <Button type="primary" onClick={() => this.props.history.push('login')}>
-          Button
-        </Button>
+        <div>{this.props.t('home')}</div>
+        <button onClick={() => this.props.history.push('login')}>Login</button>
       </div>
     );
   }
 }
+
+export default translate('common')(Home);
